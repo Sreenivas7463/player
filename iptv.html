@@ -1,0 +1,141 @@
+<html>
+
+<head>
+     <title>HLS m3u8</title>
+     <meta name="robots" content="noindex" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="shortcut icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/0/0f/Anjali_during_the_promotion_of_Vakeel_Saab.jpg">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+     <script src="https://cdn.jwplayer.com/libraries/IDzF9Zmk.js"></script>
+     <style>
+     body {
+          margin: 0
+     }
+
+     .jwplayer {
+          position: absolute !important
+     }
+
+     .jwplayer.jw-flag-aspect-mode {
+          min-height: 100%;
+          max-height: 100%
+     }
+
+     .jwplayer {
+          width: 100% !important;
+          height: 100% !important
+     }
+
+     .jw-state-idle .jw-svg-icon-play path {
+          display: none
+     }
+
+     .jw-state-idle .jw-svg-icon-play {
+          background-image: url(./play.svg);
+          background-size: contain;
+          background-repeat: no-repeat
+     }
+
+     .jwplayer .jw-display-icon-container {
+          padding: 0;
+          margin: 0 11px
+     }
+
+     .jw-display-icon-next {
+          visibility: visible !important
+     }
+
+     .jw-svg-icon-next path {
+          display: none
+     }
+
+     .jw-svg-icon-next {
+          background-image: url(./forward.svg);
+          background-size: contain;
+          background-repeat: no-repeat
+     }
+
+     .jwplayer.jw-breakpoint-0 .jw-display .jw-icon,
+     .jwplayer.jw-breakpoint-1 .jw-display .jw-icon,
+     .jwplayer.jw-breakpoint-2 .jw-display .jw-icon,
+     .jwplayer.jw-breakpoint-3 .jw-display .jw-icon,
+     .jwplayer.jw-breakpoint-4 .jw-display .jw-icon,
+     .jwplayer.jw-breakpoint-5 .jw-display .jw-icon,
+     .jwplayer.jw-breakpoint-6 .jw-display .jw-icon,
+     .jwplayer.jw-breakpoint-7 .jw-display .jw-icon {
+          width: 90px;
+          height: 0px;
+          line-height: 88px
+     }
+
+     .jwplayer.jw-state-idle .jw-display-icon-container {
+          -webkit-border-radius: 3.094em;
+          -moz-border-radius: 3.094em;
+          border-radius: 3.094em;
+          -webkit-transition: all .5s ease-out;
+          -moz-transition: all .5s ease-out;
+          -o-transition: all .5s ease-out;
+          transition: all .5s ease-out;
+          background: rgba(50, 152, 218, .5)
+     }
+
+     .jwplayer.jw-state-idle:hover .jw-display-icon-container {
+          color: #fff;
+          background: rgba(41, 183, 101, .5);
+          -webkit-transform: scale(1.4);
+          transform: scale(1.4)
+     }
+
+     .jwplayer.jw-state-idle .jw-display-icon-container .jw-icon .jw-svg-icon {
+          height: 88px;
+          width: 88px;
+          line-height: 40px;
+          margin-left: 8px
+     }
+
+     .jw-flag-ads .jw-vpaid-iframe {
+          display: block;
+     }
+
+     .jw-vpaid-iframe {
+          display: none;
+     }
+</style>
+</head>
+<body>
+<div id="player"></div>
+<script type="text/javascript">
+
+ 
+  var urlv = window.location.hash.substr(1);
+  
+  const urla = urlv.split("&");
+  var title = urla[1];
+ 
+  document.querySelector('title').textContent = title;
+
+
+  player(urla[0]);
+
+function player(e){
+//alert(e);
+     var playerInstance = jwplayer('player');
+     playerInstance.setup({
+          file: 'https://lokiiptv.in/lokiiptv.m3u8?id='+e,
+          image: 'https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png',
+          autostart: true,
+          primary: 'html5',
+          setFullscreen: true,
+          width: '100%',
+          aspectratio: '16:9',
+          preload: 'none',
+          mute: 'false',
+          androidhls: true,
+          skin: {
+               name: "netflix"
+          }
+     });
+     }
+</script>
+</body>
+</html>
