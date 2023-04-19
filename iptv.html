@@ -118,10 +118,10 @@
   player(urla[0]);
 
 function player(e){
-alert('https://lokiiptv.in/lokiiptv.m3u8?id='+e);
+//alert('https://lokiiptv.in/lokiiptv.m3u8?id='+e);
      var playerInstance = jwplayer('player');
      playerInstance.setup({
-          file: 'https://lokiiptv.in/lokiiptv.m3u8?id='+e,
+          file: e,
           image: 'https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png',
           autostart: true,
           primary: 'html5',
